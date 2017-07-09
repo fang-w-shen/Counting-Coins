@@ -9,7 +9,6 @@
   }
 
 */
-
 function coinCounter (num) {
   // Initialize a JavaScript object to hold the coins
   var coinPurse = {
@@ -22,19 +21,19 @@ function coinCounter (num) {
 while (num > 0) {
     if (num >= 0.25) {
         coinPurse.quarters = Math.floor(num / 0.25);
-        num = num -coinPurse.quarters*0.25;
+        num = (num -coinPurse.quarters*0.25).toFixed(2);
     } 
     else if (num >= 0.10) {
       coinPurse.dimes = Math.floor(num / 0.10);
-      num = num - coinPurse.dimes *0.10;
+      num = (num - coinPurse.dimes *0.10).toFixed(2);
     } 
     else if (num >= 0.05) {
       coinPurse.nickels = Math.floor(num / 0.05);
-      num = num - coinPurse.nickels * 0.05;
+      num = (num - coinPurse.nickels * 0.05).toFixed(2);
     } 
     else {
       coinPurse.pennies = Math.floor(num / 0.01);
-      num = num - coinPurse.pennies * 0.01;
+      num = (num - coinPurse.pennies * 0.01).toFixed(2);
     }
   }
 
@@ -68,5 +67,5 @@ while (num > 0) {
   return coinPurse;
 }
 
-var coins = coinCounter(0.36);
+var coins = coinCounter(.08);
 console.log(coins);
